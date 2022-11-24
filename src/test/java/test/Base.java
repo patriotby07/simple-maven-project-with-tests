@@ -24,10 +24,18 @@
 
 package test;
 
+import org.junit.AssumptionViolatedException;
+
+import static org.junit.Assert.fail;
+
 class Base {
 
     protected void run() {
         double r = Math.random();
-        System.out.println(r);
+        if (r < 0.000001) {
+            fail("oops");
+        } else if (r < 0.2) {
+            throw new AssumptionViolatedException("skipping");
+        }
     }
 }
