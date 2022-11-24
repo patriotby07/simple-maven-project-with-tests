@@ -31,8 +31,6 @@ class Base {
 
     protected void run() {
         double r = Math.random();
-         if (r < 0.2) {
-            throw new AssumptionViolatedException("skipping");
-        }
+        System.out.println(r);
     }
 }
